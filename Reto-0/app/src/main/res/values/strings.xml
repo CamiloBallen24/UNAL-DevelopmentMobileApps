@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Reto0</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">UN</string>
+    <string name="second_fragment_label">Desarrollo Movil</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Atras</string>
+
+    <string name="hello_first_fragment">Hola Mundo</string>
+    <string name="hello_second_fragment">Bienvenido</string>
+</resources>
