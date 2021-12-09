@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "160400963283",
+    "project_id": "proof-tic-tac-toe",
+    "storage_bucket": "proof-tic-tac-toe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160400963283:android:204a96370c66a2fdd38626",
+        "android_client_info": {
+          "package_name": "co.edu.unal.reto_5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160400963283-m2kt7p5ndeebfbbh06bjtl7bhuog5l18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCasSXyn5tkZlo3VvEm8n66I9uGevb11-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160400963283-m2kt7p5ndeebfbbh06bjtl7bhuog5l18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

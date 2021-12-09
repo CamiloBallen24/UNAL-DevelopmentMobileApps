@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     static final int DIALOG_QUIT_ID = 1;
     static final int DIALOG_ABOUT_ID = 2;
     static final int DIALOG_RESET_ID = 3;
+    static final int DIALOG_ONLINE= 4;
 
     MediaPlayer mHumanMediaPlayer;
     MediaPlayer mComputerMediaPlayer;
@@ -42,12 +45,13 @@ public class MainActivity extends AppCompatActivity {
     private BoardView mBoardView;
 
     private SharedPreferences mPrefs;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
+        context =  this;
         mInfoTextView = (TextView) findViewById(R.id.information);
         mCounterTextView = (TextView) findViewById(R.id.counter);
 
@@ -81,6 +85,14 @@ public class MainActivity extends AppCompatActivity {
         counterTie = mPrefs.getInt("counterTie", 0);
         mCounterTextView.setText(counterPlayer + " :Player \n" + counterTie + " :Ties \n" + counterComputer + " :Android\n");
 
+        Button online_play = (Button) findViewById(R.id.play_online);
+        online_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, SalasActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -147,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.reset_score:
                 showDialog(DIALOG_RESET_ID);
+                return true;
+            case R.id.online:
+                showDialog(DIALOG_ONLINE);
                 return true;
             case R.id.quit:
                 showDialog(DIALOG_QUIT_ID);
@@ -224,6 +239,11 @@ public class MainActivity extends AppCompatActivity {
                 counterTie = 0;
                 mCounterTextView.setText(counterPlayer + " :Player \n" + counterTie + " :Ties \n" + counterComputer + " :Android\n");
                 break;
+
+            case DIALOG_ONLINE:
+                Intent i = new Intent(this, SalasActivity.class);
+                startActivity(i);
+                break;
         }
 
         return dialog;
@@ -237,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         mComputerMediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.computer);
     }
 
+
     private void startNewGame() {
         mGame.clearBoard();
         this.winnerFlag = false;
@@ -245,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
         mInfoTextView.setText(R.string.first_human);
 
     }
+
 
     void updateScoreBoard(){
         int winner = mGame.checkForWinner();

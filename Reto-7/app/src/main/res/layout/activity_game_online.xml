@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <co.edu.unal.reto_5.BoardViewOnline
+        android:id="@+id/boardOnline"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/informationOnline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="info"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/counterOnline"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0: Tu  \n0: Ties \n0: Rival"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/nuevoJuegoOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuevo Juego"
+        />
+
+</LinearLayout>
